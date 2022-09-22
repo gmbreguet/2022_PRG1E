@@ -2,7 +2,6 @@
 // Demo           : 2022-09-22_base
 // Fichier        : 2022-09-22_base.cpp
 // Auteur(s)      : BREGUET Guy-Michel
-// Date           : 2021-10-07
 // But            : Demo en classe
 // Modifications  :
 // Remarque(s)    : NILL

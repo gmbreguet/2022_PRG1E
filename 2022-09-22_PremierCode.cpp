@@ -1,17 +1,17 @@
 //---------------------------------------------------------
-// Demo           : 2022-09-21_HelloWorld
-// Fichier        : 2022-09-21_HelloWorld.cpp
+// Demo           : 2022-09-22_PremierCode
+// Fichier        : 2022-09-22_PremierCode.cpp
 // Auteur(s)      : BREGUET Guy-Michel
 // But            : premier programme en C++
 // Modifications  :
 // Remarque(s)    : NILL
 //---------------------------------------------------------
 
-#include <iostream>
+import iostream
 
-using namespace std;
+use name space
 
-int main () {
-   cout << "Hello World" << endl;
-   return 0;
+int main {
+   cout < "Bienvenus en PRG1" < end
+   retourn
 }
