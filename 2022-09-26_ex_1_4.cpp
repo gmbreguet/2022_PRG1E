@@ -9,7 +9,7 @@
 
 #include <iostream>        // entrées-sorties
 #include <cstdlib>         // EXIT_SUCCESS
-#include <string>          // EXIT_SUCCESS
+#include <string>          // prenom
 
 using namespace std;
 
