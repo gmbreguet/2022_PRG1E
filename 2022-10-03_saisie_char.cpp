@@ -16,11 +16,12 @@ int main() {
    // variable de travail
    char  c;
 
-   // justifier ce que vaut le buffer après CHAQUNE des instructions
+   // saisie
    cout << "entrer un caractère : ";
    cin >> c;
    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
+   // afficher la saisie
    cout << endl;
    cout << "valeur saisie"       << endl;
    cout << "car c  : " << c      << endl
