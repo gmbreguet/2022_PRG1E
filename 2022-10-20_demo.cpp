@@ -13,7 +13,34 @@
 
 using namespace std;
 
+void put (const string& message) {
+   cout << '|' << message << '|' << endl;
+}
+
 int main() {
+
+   const string MSG = "hello";
+   string msg = " a tous";
+   put(msg);
+   put(MSG);
+
+   string chaine = "bonjour a tous, bientot midi";
+
+   // majusculier la chaine
+//   cout << chaine << endl;
+
+   for (size_t i=0; i<chaine.length(); ++i)
+      chaine[i] = (char)toupper(chaine[i]);
+   cout << chaine << endl;
+
+   chaine = "bonjour a tous, bientot midi";
+
+   for (char& c : chaine)
+      c = (char)toupper(c);
+   cout << chaine << endl;
+
+
+   cin.get();
 
    int   entier      = 17;
    int&  refEntier   = entier;
