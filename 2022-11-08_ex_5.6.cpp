@@ -14,7 +14,67 @@
 
 using namespace std;
 
+void echanger(int& gauche, int& droite) {
+   int tmp = gauche;
+   gauche = droite;
+   droite = tmp;
+}
+
+bool echangerPremierDernier(int tab[], size_t taille) {
+   if (taille) {
+      echanger(tab[0], tab[taille-1]);
+      return true;
+   }
+   return false;
+}
+
+void afficher(const int tab[], size_t taille) {
+   cout << "[";
+   for (size_t i=0; i<taille; ++i) {
+      if (i != 0)
+         cout << ", ";
+      cout << tab[i];
+   }
+   cout << "]" << endl;
+}
+
+int min(const int tab[], size_t taille) {
+   int valMin = tab[0];
+   for (size_t i=1; i<taille; ++i) {
+      valMin = valMin < tab[i] ? valMin : tab[i];
+   }
+   return valMin;
+}
+
+int& min(int tab[], size_t taille) {
+   int& valMin = tab[0];
+   for (size_t i=1; i<taille; ++i) {
+      valMin = valMin < tab[i] ? valMin : tab[i];
+   }
+   return valMin;
+}
+
 int main() {
+   int tab[] = {0, 1, 2, 3, -4, 5, 6, 7, 8, 9};
+   const size_t TAILLE = sizeof(tab) / sizeof(tab[0]);
+
+   afficher(tab, TAILLE);
+   echangerPremierDernier(tab, TAILLE);
+   afficher(tab, TAILLE);
+
+   int tab1[1] = {0};
+   afficher(tab1, 1);
+   echangerPremierDernier(tab1, 1);
+   afficher(tab1, 1);
+
+   int tab2[0] = {};
+   afficher(tab2, 0);
+   echangerPremierDernier(tab2, 0);
+   afficher(tab2, 0);
+
+   cout << min(tab, TAILLE) << endl;
+   min(tab, TAILLE) = 100;
+   afficher(tab, TAILLE);
 
 
    // fin de programme
