@@ -9,7 +9,6 @@
 
 #include <cstdlib>      // EXIT_SUCCESS
 #include <iostream>     // cout et cin
-#include <string>       // cout et cin
 
 
 using namespace std;
