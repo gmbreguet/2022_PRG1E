@@ -73,8 +73,8 @@ int main() {
    echangerPremierDernier(tab2, 0);
    afficher(tab2, 0);
 
-   cout << "min : " << min(tab, TAILLE) << endl;
    afficher(tab, TAILLE);
+   cout << "min : " << min(tab, TAILLE) << endl;
    min(tab, TAILLE) = 100;
    afficher(tab, TAILLE);
 
