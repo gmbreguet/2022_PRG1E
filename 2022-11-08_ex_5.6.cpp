@@ -13,12 +13,14 @@
 
 using namespace std;
 
+//---------------------------------------------------------
 void echanger(int& gauche, int& droite) {
    int tmp = gauche;
    gauche = droite;
    droite = tmp;
 }
 
+//---------------------------------------------------------
 bool echangerPremierDernier(int tab[], size_t taille) {
    if (taille) {
       echanger(tab[0], tab[taille-1]);
@@ -27,6 +29,7 @@ bool echangerPremierDernier(int tab[], size_t taille) {
    return false;
 }
 
+//---------------------------------------------------------
 void afficher(const int tab[], size_t taille) {
    cout << "[";
    for (size_t i=0; i<taille; ++i) {
@@ -37,6 +40,7 @@ void afficher(const int tab[], size_t taille) {
    cout << "]" << endl;
 }
 
+//---------------------------------------------------------
 int min(const int tab[], size_t taille) {
    int valMin = tab[0];
    for (size_t i=1; i<taille; ++i) {
@@ -45,6 +49,7 @@ int min(const int tab[], size_t taille) {
    return valMin;
 }
 
+//---------------------------------------------------------
 int& min(int tab[], size_t taille) {
    size_t iMin = 0;
    for (size_t i=1; i<taille; ++i) {
@@ -54,6 +59,7 @@ int& min(int tab[], size_t taille) {
    return tab[iMin];
 }
 
+//---------------------------------------------------------
 int main() {
    int tab[] = {0, 1, 2, 3, -4, 5, 6, 7, 8, 9};
    const size_t TAILLE = sizeof(tab) / sizeof(tab[0]);
