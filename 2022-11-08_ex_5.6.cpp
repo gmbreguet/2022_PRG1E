@@ -47,11 +47,12 @@ int min(const int tab[], size_t taille) {
 }
 
 int& min(int tab[], size_t taille) {
-   int& valMin = tab[0];
+   size_t iMin = 0;
    for (size_t i=1; i<taille; ++i) {
-      valMin = valMin < tab[i] ? valMin : tab[i];
+      if (tab[i] < tab[iMin])
+         iMin = i;
    }
-   return valMin;
+   return tab[iMin];
 }
 
 int main() {
@@ -72,7 +73,8 @@ int main() {
    echangerPremierDernier(tab2, 0);
    afficher(tab2, 0);
 
-   cout << min(tab, TAILLE) << endl;
+   cout << "min : " << min(tab, TAILLE) << endl;
+   afficher(tab, TAILLE);
    min(tab, TAILLE) = 100;
    afficher(tab, TAILLE);
 
