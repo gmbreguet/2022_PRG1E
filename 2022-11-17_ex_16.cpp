@@ -15,6 +15,7 @@ using namespace std;
 
 using Vecteur = vector<int>;
 
+//------------------------------------------
 void afficher(const Vecteur& v) {
    cout << "[";
    for (size_t i=0; i<v.size(); ++i) {
@@ -25,6 +26,19 @@ void afficher(const Vecteur& v) {
    cout << "]";
 }
 
+//------------------------------------------
+ostream& operator<< (ostream& os, const Vecteur& v) {
+   os << "[";
+   for (size_t i=0; i<v.size(); ++i) {
+      if (i)
+         os << ", ";
+      os << v[i];
+   }
+   os << "]";
+   return os;
+}
+
+//------------------------------------------
 Vecteur concatVecteur(const Vecteur& gauche, const Vecteur& droite) {
 
 //   Vecteur resultat = gauche;
@@ -42,10 +56,10 @@ Vecteur concatVecteur(const Vecteur& gauche, const Vecteur& droite) {
    resultat.reserve( gauche.size() + droite.size() );
 
    resultat.insert(resultat.begin(), gauche.begin(), gauche.end());
-   afficher(resultat); cout << endl;
+   cout << resultat << endl;
 
    resultat.insert(resultat.end(), droite.begin(), droite.end());
-   afficher(resultat); cout << endl;
+   cout << resultat << endl;
 
 //   resultat.insert( resultat.insert(resultat.begin(), droite.begin(), droite.end()),
 //                    gauche.begin(), gauche.end());
@@ -61,6 +75,8 @@ int main() {
    const Vecteur v2 = {21, 22, 23, 24, 25, 26, 27};
 
    concatVecteur(v1, v2);
+
+   cout << v1 << endl;
 
    // fin de programme
    cout << "Presser ENTER pour quitter";
