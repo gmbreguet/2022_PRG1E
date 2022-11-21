@@ -15,6 +15,16 @@ using namespace std;
 
 using Vecteur = vector<int>;
 
+void test (const auto v) {
+   cout << "[";
+   for (size_t i=0; i<v.size(); ++i) {
+      if (i)
+         cout << ", ";
+      cout << v[i];
+   }
+   cout << "]";
+}
+
 //------------------------------------------
 void afficher(const Vecteur& v) {
    cout << "[";
@@ -73,10 +83,16 @@ int main() {
 
    const Vecteur v1 = {11, 12, 13, 14};
    const Vecteur v2 = {21, 22, 23, 24, 25, 26, 27};
+   const vector<bool> v3 = {0,0,0,0,0,1,1,1,1,1};
 
    concatVecteur(v1, v2);
 
    cout << v1 << endl;
+
+   test(v1);
+   test(v2);
+   test(v3);
+   test(1);
 
    // fin de programme
    cout << "Presser ENTER pour quitter";
