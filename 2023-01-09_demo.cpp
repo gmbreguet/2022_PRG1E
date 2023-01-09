@@ -24,7 +24,7 @@ void afficher (const array<T, taille>& a);
 
 //--------------------------------------------------
 template<typename T>
-T Put(T s);
+T Plus1(T s);
 
 //--------------------------------------------------
 template<typename T, int taille, typename Fct>
@@ -48,11 +48,11 @@ int main () {
    array<short, 20> a20 = {1, 2, 3, 4, 5};
    afficher<short, 20>(a20); cout << endl;
 
-   for_each(a20.begin(), a20.end(), Put<short>);
-   cout << endl;
+   for_each(a20.begin(), a20.end(), Plus1<short>);
+   afficher<short, 20>(a20); cout << endl;
 
-   Parcourir<short, 20>(a20, Put<short>);
-   cout << endl;
+   Parcourir<short, 20>(a20, Plus1<short>);
+   afficher<short, 20>(a20); cout << endl;
 
    return EXIT_SUCCESS;
 }
@@ -82,7 +82,6 @@ void afficher (const array<T, taille>& a) {
 
 //--------------------------------------------------
 template<typename T>
-T Put(T s) {
-   cout << s;
-   return s;
+T Plus1(T s) {
+   return s + 1;
 }
