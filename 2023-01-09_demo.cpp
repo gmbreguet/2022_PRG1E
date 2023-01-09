@@ -35,7 +35,24 @@ void Parcourir(array<T, taille>& a, Fct fct) {
 }
 
 //--------------------------------------------------
+template<typename R, typename T, typename U>
+R Plus(T a, U b) {
+   return a + b;
+}
+
+//--------------------------------------------------
+template <typename T>
+void fct(T a, T b) {
+   a + b;
+}
+
+//--------------------------------------------------
 int main () {
+
+   cout << Plus<int, int, int>(1, 2.3);
+   cout << Plus<int>(1, 2.3);
+
+
    const vector<int> vi = {1, 2, 3, 4, 5};
    cout << vi << endl;
 
@@ -53,6 +70,9 @@ int main () {
 
    Parcourir<short, 20>(a20, Plus1<short>);
    afficher<short, 20>(a20); cout << endl;
+
+   //fct(2, 3.3);    // T par déduction mais de type différent !!
+   fct<int>(2, 3.3); // explicitement choisi à int => 3.3 sera converti
 
    return EXIT_SUCCESS;
 }
